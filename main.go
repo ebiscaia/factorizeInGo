@@ -25,5 +25,6 @@ import "fmt"
 
 func main() {
 	number := 50
+	divisor := 11
 	fmt.Printf("%v\n", number)
 }
