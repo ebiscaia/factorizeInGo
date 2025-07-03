@@ -25,4 +25,5 @@ import "fmt"
 
 func main() {
 	fmt.Println("Program")
+	number := 50
 }
