@@ -19,3 +19,10 @@
 //--divisors 50
 //[1,2.5,10,50]
 
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Program")
+}
