@@ -24,6 +24,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Program")
 	number := 50
+	fmt.Printf("%v\n", number)
 }
