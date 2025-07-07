@@ -44,5 +44,4 @@ func checkPrime(number int) {
 			}
 		}
 	}
-
 }
