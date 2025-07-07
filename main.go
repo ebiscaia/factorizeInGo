@@ -33,13 +33,17 @@ func main() {
 func checkPrime(number int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
+		return false
 	} else {
 		for testNumber := 2; number >= testNumber; testNumber++ {
 			if number%testNumber == 0 {
 				if number == testNumber {
+					return true
 				} else {
+					return false
 				}
 			}
 		}
 	}
+	return true
 }
