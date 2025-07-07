@@ -32,6 +32,7 @@ func main() {
 
 func checkPrime(number int) bool {
 	//Check if a number is a prime number
+	isPrime := false
 	if number < 2 {
 		fmt.Printf("%v is not a prime number\n", number)
 	} else {
