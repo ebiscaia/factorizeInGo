@@ -28,18 +28,17 @@ func main() {
 	divisor := 11
 	fmt.Printf("%v\n", number)
 
-	//Check if a divisor is a prime number
-	if divisor < 2 {
-		fmt.Printf("%v is not a prime number\n", divisor)
 func checkPrime(number int) {
+	//Check if a number is a prime number
+	if number < 2 {
+		fmt.Printf("%v is not a prime number\n", number)
 	} else {
-		for testNumber := 2; divisor >= testNumber; testNumber++ {
-			if divisor%testNumber == 0 {
-				if divisor == testNumber {
-					fmt.Printf("%v is a prime number\n", divisor)
-
+		for testNumber := 2; number >= testNumber; testNumber++ {
+			if number%testNumber == 0 {
+				if number == testNumber {
+					fmt.Printf("%v is a prime number\n", number)
 				} else {
-					fmt.Printf("%v is not a prime number\n", divisor)
+					fmt.Printf("%v is not a prime number\n", number)
 					break
 				}
 			}
