@@ -27,6 +27,8 @@ func main() {
 	number := 50
 	divisor := 11
 	fmt.Printf("%v\n", number)
+	checkPrime(divisor)
+}
 
 func checkPrime(number int) {
 	//Check if a number is a prime number
