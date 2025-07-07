@@ -30,7 +30,7 @@ func main() {
 	checkPrime(divisor)
 }
 
-func checkPrime(number int) {
+func checkPrime(number int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
 		fmt.Printf("%v is not a prime number\n", number)
