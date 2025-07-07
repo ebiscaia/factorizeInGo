@@ -31,6 +31,7 @@ func main() {
 	//Check if a divisor is a prime number
 	if divisor < 2 {
 		fmt.Printf("%v is not a prime number\n", divisor)
+func checkPrime(number int) {
 	} else {
 		for testNumber := 2; divisor >= testNumber; testNumber++ {
 			if divisor%testNumber == 0 {
