@@ -47,4 +47,5 @@ func checkPrime(number int) bool {
 			}
 		}
 	}
+	return isPrime
 }
