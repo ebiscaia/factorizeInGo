@@ -46,3 +46,13 @@ func checkPrime(number int) bool {
 	}
 	return isPrime
 }
+
+func allPrimes(number int) []int {
+	listPrimes := []int{}
+	for i := 1; number >= i; i++ {
+		if checkPrime(i) {
+			listPrimes = append(listPrimes, i)
+		}
+	}
+	return listPrimes
+}
