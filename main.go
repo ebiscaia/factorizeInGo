@@ -25,6 +25,7 @@ import "fmt"
 
 func main() {
 	number := 50
+	fmt.Println(allPrimes(number))
 }
 
 func checkPrime(number int) bool {
