@@ -28,6 +28,7 @@ func main() {
 	divisor := 11
 	fmt.Printf("%v\n", number)
 	checkPrime(divisor)
+	fmt.Printf("%v\n", allPrimes(number))
 }
 
 func checkPrime(number int) bool {
