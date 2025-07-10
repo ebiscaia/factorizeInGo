@@ -25,9 +25,8 @@ import "fmt"
 
 func main() {
 	number := 50
-	divisor := 11
-	fmt.Printf("%v\n", number)
-	fmt.Printf("%v\n", checkPrime(divisor))
+
+	fmt.Println(allPrimes(number))
 }
 
 func checkPrime(number int) bool {
@@ -46,4 +45,14 @@ func checkPrime(number int) bool {
 		}
 	}
 	return true
+}
+
+func allPrimes(number int) []int {
+	listPrimes := []int{}
+	for i := 1; number >= i; i++ {
+		if checkPrime(i) {
+			listPrimes = append(listPrimes, i)
+		}
+	}
+	return listPrimes
 }
