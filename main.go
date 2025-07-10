@@ -49,3 +49,13 @@ func checkPrime(number int) bool {
 	}
 	return isPrime
 }
+
+func allPrimes(number int) []int {
+	primeList := []int{}
+	for prime := 2; prime <= number; prime++ {
+		if checkPrime(prime) {
+			primeList = append(primeList, prime)
+		}
+	}
+	return primeList
+}
