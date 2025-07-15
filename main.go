@@ -25,38 +25,34 @@ import "fmt"
 
 func main() {
 	number := 50
-	divisor := 11
-	fmt.Printf("%v\n", number)
-	checkPrime(divisor)
-	fmt.Printf("%v\n", allPrimes(number))
+
+	fmt.Println(allPrimes(number))
 }
 
 func checkPrime(number int) bool {
 	//Check if a number is a prime number
-	isPrime := false
 	if number < 2 {
-		isPrime = false
+		return false
 	} else {
 		for testNumber := 2; number >= testNumber; testNumber++ {
 			if number%testNumber == 0 {
 				if number == testNumber {
-					isPrime = true
+					return true
 				} else {
-					isPrime = false
-					break
+					return false
 				}
 			}
 		}
 	}
-	return isPrime
+	return true
 }
 
 func allPrimes(number int) []int {
-	primeList := []int{}
-	for prime := 2; prime <= number; prime++ {
-		if checkPrime(prime) {
-			primeList = append(primeList, prime)
+	listPrimes := []int{}
+	for i := 1; number >= i; i++ {
+		if checkPrime(i) {
+			listPrimes = append(listPrimes, i)
 		}
 	}
-	return primeList
+	return listPrimes
 }
