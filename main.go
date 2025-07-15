@@ -28,7 +28,7 @@ func main() {
 	fmt.Println(allPrimes(number))
 }
 
-func checkPrime(number int) bool {
+func checkPrime(number int, primes []int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
 		return false
