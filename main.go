@@ -25,22 +25,19 @@ import "fmt"
 
 func main() {
 	number := 50
-
 	fmt.Println(allPrimes(number))
 }
 
-func checkPrime(number int) bool {
+func checkPrime(number int, primes []int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
 		return false
+	} else if number == 2 {
+		return true
 	} else {
-		for testNumber := 2; number >= testNumber; testNumber++ {
-			if number%testNumber == 0 {
-				if number == testNumber {
-					return true
-				} else {
-					return false
-				}
+		for _, prime := range primes {
+			if number%prime == 0 {
+				return false
 			}
 		}
 	}
@@ -50,7 +47,7 @@ func checkPrime(number int) bool {
 func allPrimes(number int) []int {
 	listPrimes := []int{}
 	for i := 1; number >= i; i++ {
-		if checkPrime(i) {
+		if checkPrime(i, listPrimes) {
 			listPrimes = append(listPrimes, i)
 		}
 	}
