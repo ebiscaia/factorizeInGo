@@ -49,7 +49,7 @@ func checkPrime(number int) bool {
 func allPrimes(number int) []int {
 	listPrimes := []int{}
 	for i := 1; number >= i; i++ {
-		if checkPrime(i) {
+		if checkPrime(i, listPrimes) {
 			listPrimes = append(listPrimes, i)
 		}
 	}
