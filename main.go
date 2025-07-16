@@ -53,3 +53,20 @@ func allPrimes(number int) []int {
 	}
 	return listPrimes
 }
+
+func calcPrimeFactors(number int) []int {
+	divisor := 1
+	primes := []int{}
+	primeFactors := []int{}
+	for number > 1 {
+		for !checkPrime(divisor, primes) {
+			divisor++
+		}
+		for number%divisor == 0 {
+			primeFactors = append(primeFactors, divisor)
+			number /= divisor
+		}
+		divisor++
+	}
+	return primeFactors
+}
