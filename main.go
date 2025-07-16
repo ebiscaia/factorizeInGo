@@ -25,7 +25,7 @@ import "fmt"
 
 func main() {
 	number := 50
-	fmt.Println(allPrimes(number))
+	fmt.Println(calcPrimeFactors(number))
 }
 
 func checkPrime(number int, primes []int) bool {
