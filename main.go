@@ -35,11 +35,10 @@ func checkPrime(number int, primes []int) bool {
 	}
 	if number == 2 {
 		return true
-	} else {
-		for _, prime := range primes {
-			if number%prime == 0 {
-				return false
-			}
+	}
+	for _, prime := range primes {
+		if number%prime == 0 {
+			return false
 		}
 	}
 	return true
