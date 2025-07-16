@@ -23,6 +23,11 @@ package main
 
 import "fmt"
 
+type divisor struct {
+	factor int
+	power  int
+}
+
 func main() {
 	number := 50
 	fmt.Println(calcPrimeFactors(number))
