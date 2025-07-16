@@ -32,7 +32,8 @@ func checkPrime(number int, primes []int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
 		return false
-	} else if number == 2 {
+	}
+	if number == 2 {
 		return true
 	} else {
 		for _, prime := range primes {
