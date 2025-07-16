@@ -75,3 +75,19 @@ func calcPrimeFactors(number int) []int {
 	}
 	return primeFactors
 }
+
+func factorsPowers(factors []int) []divisor {
+	prev_factor := 1
+	factorsAndPowers := []divisor{}
+	div := divisor{}
+	for _, cur_factor := range factors {
+		if cur_factor != prev_factor {
+			div = divisor{factor: cur_factor, power: 1}
+			factorsAndPowers = append(factorsAndPowers, div)
+			prev_factor = cur_factor
+		} else {
+			factorsAndPowers[len(factorsAndPowers)-1].power++
+		}
+	}
+	return factorsAndPowers
+}
