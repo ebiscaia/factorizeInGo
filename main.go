@@ -94,3 +94,15 @@ func factorsPowers(factors []int) []divisor {
 	}
 	return factorsAndPowers
 }
+
+func allPowers(factorsAndPowers []divisor) [][]int {
+	powers := [][]int{}
+	for _, primeFactor := range factorsAndPowers {
+		factorPowers := []int{}
+		for i := 0; i <= primeFactor.power; i++ {
+			factorPowers = append(factorPowers, int(math.Pow(float64(primeFactor.factor), float64(i))))
+		}
+		powers = append(powers, factorPowers)
+	}
+	return powers
+}
