@@ -21,7 +21,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type divisor struct {
 	factor int
