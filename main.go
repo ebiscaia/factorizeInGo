@@ -34,7 +34,7 @@ type divisor struct {
 
 func main() {
 	number := 50
-	fmt.Println(allPowers(factorsPowers(calcPrimeFactors(number))))
+	fmt.Println(allDivisors(number))
 }
 
 func checkPrime(number int, primes []int) bool {
