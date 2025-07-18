@@ -24,6 +24,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"sort"
 )
 
 type divisor struct {
@@ -105,4 +106,19 @@ func allPowers(factorsAndPowers []divisor) [][]int {
 		powers = append(powers, factorPowers)
 	}
 	return powers
+}
+
+func allDivisors(powers [][]int) []int {
+	listOfDivisors := []int{1}
+	for _, power := range powers {
+		newListOfDivisors := []int{}
+		for _, number := range power {
+			for _, div := range listOfDivisors {
+				newListOfDivisors = append(newListOfDivisors, number*div)
+			}
+		}
+		listOfDivisors = newListOfDivisors
+	}
+	sort.Ints(listOfDivisors)
+	return listOfDivisors
 }
