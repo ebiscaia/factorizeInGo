@@ -80,7 +80,7 @@ func calcPrimeFactors(number int) []int {
 	return primeFactors
 }
 
-func factorsPowers(factors []int) []divisor {
+func factorsPowers(number int) []divisor {
 	prev_factor := 1
 	factorsAndPowers := []divisor{}
 	div := divisor{}
