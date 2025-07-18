@@ -82,6 +82,7 @@ func calcPrimeFactors(number int) []int {
 
 func factorsPowers(number int) []divisor {
 	prev_factor := 1
+	factors := calcPrimeFactors(number)
 	factorsAndPowers := []divisor{}
 	div := divisor{}
 	for _, cur_factor := range factors {
