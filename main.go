@@ -112,6 +112,7 @@ func allPowers(number int) [][]int {
 
 func allDivisors(number int) []int {
 	listOfDivisors := []int{1}
+	powers := allPowers(number)
 	for _, power := range powers {
 		newListOfDivisors := []int{}
 		for _, number := range power {
