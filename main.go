@@ -97,7 +97,7 @@ func factorsPowers(number int) []divisor {
 	return factorsAndPowers
 }
 
-func allPowers(factorsAndPowers []divisor) [][]int {
+func allPowers(number int) [][]int {
 	powers := [][]int{}
 	for _, primeFactor := range factorsAndPowers {
 		factorPowers := []int{}
