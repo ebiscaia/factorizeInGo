@@ -32,11 +32,6 @@ type divisor struct {
 	power  int
 }
 
-func main() {
-	number := 50
-	fmt.Println(allDivisors(number))
-}
-
 func checkPrime(number int, primes []int) bool {
 	//Check if a number is a prime number
 	if number < 2 {
@@ -124,4 +119,9 @@ func allDivisors(number int) []int {
 	}
 	sort.Ints(listOfDivisors)
 	return listOfDivisors
+}
+
+func main() {
+	number := 50
+	fmt.Println(allDivisors(number))
 }
