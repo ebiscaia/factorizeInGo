@@ -131,4 +131,6 @@ func main() {
 	factorPairsFlag := flag.Bool("factor-pairs", false, "factorize the argument number displaying the prime divisor and its power")
 	divisorsFlag := flag.Bool("divisors", false, "calculate all the divisors of given argument")
 
+	flag.Parse()
+
 }
