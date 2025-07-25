@@ -22,19 +22,17 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math"
+	"os"
 	"sort"
+	"strconv"
 )
 
 type divisor struct {
 	factor int
 	power  int
-}
-
-func main() {
-	number := 50
-	fmt.Println(allDivisors(number))
 }
 
 func checkPrime(number int, primes []int) bool {
@@ -124,4 +122,70 @@ func allDivisors(number int) []int {
 	}
 	sort.Ints(listOfDivisors)
 	return listOfDivisors
+}
+
+func countFlags() int {
+	//Check the number of flags provided by the user when the program is run
+	setFlags := []string{}
+	flag.Visit(func(f *flag.Flag) {
+		setFlags = append(setFlags, f.Name)
+	})
+	return len(setFlags)
+}
+
+func printHelp() {
+	fmt.Println("Usage: ")
+	fmt.Println("go main run main.go <argument> <number>. The <argument> can be:")
+	fmt.Println()
+	fmt.Println("\t--allPrimes")
+	fmt.Println("\t--factors")
+	fmt.Println("\t--factor-pairs")
+	fmt.Println("\t--divisors")
+	fmt.Println("<number> must be an integer number greater than 0")
+	fmt.Println()
+	fmt.Println()
+
+	fmt.Println("Check whether the flag is correct or if the number is integer")
+	fmt.Println("Also make sure to pass just one flag at the time")
+	os.Exit(1)
+}
+
+func main() {
+	//variables containing the flags definitions
+	allPrimesFlag := flag.Bool("all-primes", false, "calculate all prime numbers below argument number")
+	factorsFlag := flag.Bool("factors", false, "factorize the argument number")
+	factorPairsFlag := flag.Bool("factor-pairs", false, "factorize the argument number displaying the prime divisor and its power")
+	divisorsFlag := flag.Bool("divisors", false, "calculate all the divisors of given argument")
+
+	flag.Parse()
+
+	if countFlags() != 1 {
+		printHelp()
+	}
+
+	args := flag.Args()
+	if len(args) != 1 {
+		printHelp()
+	}
+
+	//Check whether the argument can be converted to an integer number.
+	number, err := strconv.Atoi(args[0])
+	if err != nil {
+		printHelp()
+	}
+
+	//Use proper function depending on prompt
+	switch {
+	case *allPrimesFlag:
+		fmt.Printf("%v", allPrimes(number))
+	case *factorsFlag:
+		fmt.Printf("%v", calcPrimeFactors(number))
+	case *factorPairsFlag:
+		fmt.Printf("%v", factorsPowers(number))
+	case *divisorsFlag:
+		fmt.Printf("%v", allDivisors(number))
+	default:
+		printHelp()
+	}
+
 }
