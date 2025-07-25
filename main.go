@@ -125,4 +125,10 @@ func allDivisors(number int) []int {
 }
 
 func main() {
+	//variables containing the flags definitions
+	allPrimesFlag := flag.Bool("all-primes", false, "calculate all prime numbers below argument number")
+	factorsFlag := flag.Bool("factors", false, "factorize the argument number")
+	factorPairsFlag := flag.Bool("factor-pairs", false, "factorize the argument number displaying the prime divisor and its power")
+	divisorsFlag := flag.Bool("divisors", false, "calculate all the divisors of given argument")
+
 }
