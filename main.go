@@ -163,4 +163,9 @@ func main() {
 		printHelp()
 	}
 
+	args := flag.Args()
+	if len(args) != 1 {
+		printHelp()
+	}
+
 }
