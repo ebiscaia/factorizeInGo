@@ -22,9 +22,12 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math"
+	"os"
 	"sort"
+	"strconv"
 )
 
 type divisor struct {
