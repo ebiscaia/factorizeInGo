@@ -124,6 +124,15 @@ func allDivisors(number int) []int {
 	return listOfDivisors
 }
 
+func countFlags() int {
+	//Check the number of flags provided by the user when the program is run
+	setFlags := []string{}
+	flag.Visit(func(f *flag.Flag) {
+		setFlags = append(setFlags, f.Name)
+	})
+	return len(setFlags)
+}
+
 func main() {
 	//variables containing the flags definitions
 	allPrimesFlag := flag.Bool("all-primes", false, "calculate all prime numbers below argument number")
