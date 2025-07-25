@@ -168,4 +168,10 @@ func main() {
 		printHelp()
 	}
 
+	//Check whether the argument can be converted to an integer number.
+	number, err := strconv.Atoi(args[0])
+	if err != nil {
+		printHelp()
+	}
+
 }
