@@ -142,4 +142,8 @@ func main() {
 
 	flag.Parse()
 
+	if countFlags() != 1 {
+		printHelp()
+	}
+
 }
