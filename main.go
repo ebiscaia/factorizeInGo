@@ -133,6 +133,23 @@ func countFlags() int {
 	return len(setFlags)
 }
 
+func printHelp() {
+	fmt.Println("Usage: ")
+	fmt.Println("go main run main.go <argument> <number>. The <argument> can be:")
+	fmt.Println()
+	fmt.Println("\t--allPrimes")
+	fmt.Println("\t--factors")
+	fmt.Println("\t--factor-pairs")
+	fmt.Println("\t--divisors")
+	fmt.Println("<number> must be an integer number greater than 0")
+	fmt.Println()
+	fmt.Println()
+
+	fmt.Println("Check whether the flag is correct or if the number is integer")
+	fmt.Println("Also make sure to pass just one flag at the time")
+	os.Exit(1)
+}
+
 func main() {
 	//variables containing the flags definitions
 	allPrimesFlag := flag.Bool("all-primes", false, "calculate all prime numbers below argument number")
