@@ -125,6 +125,4 @@ func allDivisors(number int) []int {
 }
 
 func main() {
-	number := 50
-	fmt.Println(allDivisors(number))
 }
