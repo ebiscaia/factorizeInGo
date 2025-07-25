@@ -174,4 +174,18 @@ func main() {
 		printHelp()
 	}
 
+	//Use proper function depending on prompt
+	switch {
+	case *allPrimesFlag:
+		fmt.Printf("%v", allPrimes(number))
+	case *factorsFlag:
+		fmt.Printf("%v", calcPrimeFactors(number))
+	case *factorPairsFlag:
+		fmt.Printf("%v", factorsPowers(number))
+	case *divisorsFlag:
+		fmt.Printf("%v", allDivisors(number))
+	default:
+		printHelp()
+	}
+
 }
